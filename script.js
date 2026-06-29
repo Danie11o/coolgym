@@ -25,6 +25,7 @@
       'nav.pricing': 'Cennik',
       'nav.promos': 'Promocje',
       'nav.hours': 'Godziny',
+      'nav.cards': 'Karty',
       'nav.bmi': 'Kalkulator BMI',
       'nav.contact': 'Kontakt',
 
@@ -125,6 +126,10 @@
       'hours.holidaysLabel': 'Święta',
       'hours.holidaysValue': 'Godziny mogą się różnić',
 
+      'cards.eyebrow': 'Karty sportowe',
+      'cards.title': 'Honorujemy karty',
+      'cards.lead': 'Honorujemy karty Benefit (wszystkie rodzaje), OKSystem, FitProfit oraz BeActive.',
+
       'bmi.eyebrow': 'Kalkulator',
       'bmi.title': 'Sprawdź swoje BMI',
       'bmi.lead': 'Szybki wskaźnik punktu wyjścia do rozmowy z trenerem o Twoich celach.',
@@ -144,6 +149,8 @@
       'contact.phoneLabel': 'Telefon',
       'contact.emailLabel': 'E-mail',
       'contact.callCta': 'Zadzwoń teraz',
+
+      'footer.regulation': 'Regulamin klubu (PDF)',
     },
 
     en: {
@@ -152,6 +159,7 @@
       'nav.pricing': 'Pricing',
       'nav.promos': 'Promotions',
       'nav.hours': 'Hours',
+      'nav.cards': 'Sports Cards',
       'nav.bmi': 'BMI Calculator',
       'nav.contact': 'Contact',
 
@@ -252,6 +260,10 @@
       'hours.holidaysLabel': 'Holidays',
       'hours.holidaysValue': 'Hours may vary',
 
+      'cards.eyebrow': 'Sports cards',
+      'cards.title': 'We accept these cards',
+      'cards.lead': 'We accept Benefit cards (all types), OKSystem, FitProfit, and BeActive.',
+
       'bmi.eyebrow': 'Calculator',
       'bmi.title': 'Check your BMI',
       'bmi.lead': 'A quick starting point for a conversation with your coach about your goals.',
@@ -271,6 +283,8 @@
       'contact.phoneLabel': 'Phone',
       'contact.emailLabel': 'Email',
       'contact.callCta': 'Call now',
+
+      'footer.regulation': 'Club rules (PDF)',
     },
   };
 
