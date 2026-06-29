@@ -733,6 +733,48 @@ h1, h2, h3 {
   font-size: 0.85rem;
 }
 
+/* ---------- 10b. HONOROWANE KARTY SPORTOWE ---------- */
+.cards-accepted {
+  background: var(--color-surface);
+}
+
+.cards-grid {
+  margin-top: 56px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  align-items: center;
+}
+
+.card-logo {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 4 / 3;
+  transition: transform 0.3s var(--ease), border-color 0.3s var(--ease);
+}
+
+.card-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: grayscale(100%) brightness(1.5) contrast(0.9) opacity(0.75);
+  transition: filter 0.35s var(--ease);
+}
+
+.card-logo:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-accent);
+}
+
+.card-logo:hover img {
+  filter: grayscale(0%) brightness(1) contrast(1) opacity(1);
+}
+
 /* ---------- 11. KALKULATOR BMI ---------- */
 .bmi-card {
   max-width: 480px;
@@ -854,20 +896,56 @@ h1, h2, h3 {
 /* ---------- 13. STOPKA ---------- */
 .site-footer {
   border-top: 1px solid var(--color-border);
-  padding-block: 36px;
+  padding-block: 40px;
 }
 
 .footer-inner {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 18px;
   text-align: center;
 }
 
 .footer-logo {
   font-family: var(--font-display);
   font-size: 1.1rem;
+}
+
+.footer-social {
+  display: flex;
+  gap: 14px;
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  color: var(--color-text-muted);
+  transition: color 0.25s var(--ease), border-color 0.25s var(--ease), transform 0.25s var(--ease);
+}
+
+.social-icon:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+  transform: translateY(-2px);
+}
+
+.footer-regulation {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  border-bottom: 1px solid transparent;
+  transition: color 0.25s var(--ease), border-color 0.25s var(--ease);
+}
+
+.footer-regulation:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
 }
 
 .footer-copy {
@@ -902,7 +980,8 @@ h1, h2, h3 {
 /* Tablet */
 @media (max-width: 1024px) {
   .offer-grid,
-  .pricing-grid {
+  .pricing-grid,
+  .cards-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -998,6 +1077,11 @@ h1, h2, h3 {
     grid-template-columns: 1fr;
   }
 
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
   .price-row {
     flex-direction: column;
     align-items: flex-start;
@@ -1025,4 +1109,8 @@ h1, h2, h3 {
   .footer-inner {
     text-align: center;
   }
+}
+.logod {
+width: 80px; /* zmień według potrzeb */
+height: auto;
 }
