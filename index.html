@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ============================================================
+       SEO — meta tagi (treść w PL, JS podmienia tekst widoczny,
+       ale meta tagi pod wyszukiwarki zostają w języku domyślnym)
+  ============================================================ -->
+  <title>Cool Gym — Siłownia premium | Trening, który zmienia</title>
+  <meta name="description" content="Cool Gym — nowoczesna siłownia premium. Profesjonalny sprzęt, trening personalny, sauna i zajęcia grupowe. Sprawdź cennik i godziny otwarcia.">
+  <meta name="keywords" content="siłownia, gym, trening personalny, fitness, cool gym, siłownia premium">
+  <meta name="author" content="Cool Gym">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Cool Gym — Siłownia premium">
+  <meta property="og:description" content="Profesjonalny sprzęt, trening personalny i wyjątkowa atmosfera. Zobacz ofertę Cool Gym.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1200&q=80">
+  <meta property="og:locale" content="pl_PL">
+
+  <meta name="theme-color" content="#0A0A0B">
+
+  <!-- Fonty: Bebas Neue (display) + Inter (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       NAGŁÓWEK / NAWIGACJA
+  ============================================================ -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a href="#" class="logo" id="logoLink" data-i18n-aria="nav.logoAria">
+        <!--
+          LOGO — plik logo.png powinien być w tym samym katalogu co index.html.
+          Jeśli plik nie zostanie znaleziony, automatycznie pokaże się
+          tekstowa wersja "COOLGYM" (patrz onerror poniżej).
+        -->
+        <img
+          src="logo.png"
+          alt="Cool Gym — logo siłowni"
+          class="logo-img"
+          width="140"
+          height="48"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';"
+        >
+        <span class="logo-fallback" style="display:none;">COOL<span class="logo-accent">GYM</span></span>
+      </a>
+
+      <nav class="nav" id="nav">
+        <a href="#about" data-i18n="nav.about">O nas</a>
+        <a href="#offer" data-i18n="nav.offer">Oferta</a>
+        <a href="#pricing" data-i18n="nav.pricing">Cennik</a>
+        <a href="#promos" data-i18n="nav.promos">Promocje</a>
+        <a href="#hours" data-i18n="nav.hours">Godziny</a>
+        <a href="#bmi" data-i18n="nav.bmi">Kalkulator BMI</a>
+        <a href="#contact" data-i18n="nav.contact">Kontakt</a>
+      </nav>
+
+      <div class="header-actions">
+        <!-- Przełącznik języka -->
+        <div class="lang-switch" id="langSwitch" role="group" aria-label="Wybór języka">
+          <button type="button" class="lang-btn is-active" data-lang="pl" aria-pressed="true">
+            <span aria-hidden="true">🇵🇱</span> PL
+          </button>
+          <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">
+            <span aria-hidden="true">🇬🇧</span> EN
+          </button>
+        </div>
+
+        <button class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="nav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============================================================
+         HERO
+    ============================================================ -->
+    <section class="hero" id="hero">
+      <!--
+        ZDJĘCIE HERO — PLACEHOLDER (Unsplash, wolna licencja).
+        Aby podmienić na własne zdjęcie: zmień wartość src poniżej
+        na ścieżkę do własnego pliku, np. "images/hero.jpg".
+      -->
+      <img
+        class="hero-bg"
+        src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1920&q=80"
+        alt="Siłownia Cool Gym — profesjonalna strefa treningowa"
+        loading="eager"
+      >
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="hero-lines" aria-hidden="true"></div>
+
+      <div class="container hero-content">
+        <p class="eyebrow" data-i18n="hero.eyebrow">Cool Gym · Twoja siłownia</p>
+        <h1 class="hero-title">
+          <span data-i18n="hero.titleLine1">SIŁA, KTÓRA</span><br>
+          <span class="text-accent" data-i18n="hero.titleLine2">NIE ZNA GRANIC</span>
+        </h1>
+        <p class="hero-subtitle" data-i18n="hero.subtitle">
+          Profesjonalny sprzęt, doświadczeni trenerzy i atmosfera, która motywuje do działania każdego dnia.
+        </p>
+        <div class="hero-actions">
+          <a href="#offer" class="btn btn-primary" data-i18n="hero.cta">Zobacz ofertę</a>
+        </div>
+      </div>
+
+      <a href="#about" class="scroll-hint" aria-label="Przewiń niżej">
+        <span class="pulse-dot" aria-hidden="true"></span>
+      </a>
+    </section>
+
+    <!-- ============================================================
+         O SIŁOWNI
+    ============================================================ -->
+    <section class="section about" id="about">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-text reveal">
+            <p class="eyebrow" data-i18n="about.eyebrow">O nas</p>
+            <h2 class="section-title" data-i18n="about.title">Miejsce stworzone dla Twojego progresu</h2>
+            <p class="about-lead" data-i18n="about.lead">
+              Cool Gym to nie jest kolejna siłownia — to przestrzeń, w której liczy się każdy trening.
+              Łączymy profesjonalny sprzęt, sprawdzoną wiedzę trenerską i atmosferę, w której chce się wracać.
+            </p>
+
+            <ul class="about-points">
+              <li>
+                <span class="point-icon" aria-hidden="true">●</span>
+                <div>
+                  <strong data-i18n="about.point1Title">Sprzęt klasy premium</strong>
+                  <p data-i18n="about.point1Text">Maszyny i wolne ciężary renomowanych marek, regularnie serwisowane.</p>
+                </div>
+              </li>
+              <li>
+                <span class="point-icon" aria-hidden="true">●</span>
+                <div>
+                  <strong data-i18n="about.point2Title">Doświadczeni trenerzy</strong>
+                  <p data-i18n="about.point2Text">Indywidualne podejście do każdego — od pierwszej wizyty do zawodowych celów.</p>
+                </div>
+              </li>
+              <li>
+                <span class="point-icon" aria-hidden="true">●</span>
+                <div>
+                  <strong data-i18n="about.point3Title">Czysto i komfortowo</strong>
+                  <p data-i18n="about.point3Text">Zadbana przestrzeń, szatnie i strefa relaksu po treningu.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="about-media reveal">
+            <!-- PLACEHOLDER zdjęcia — podmień src na własne -->
+            <img
+              src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=900&q=80"
+              alt="Strefa treningowa Cool Gym z wolnymi ciężarami"
+              loading="lazy"
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         OFERTA
+    ============================================================ -->
+    <section class="section offer" id="offer">
+      <div class="container">
+        <p class="eyebrow center reveal" data-i18n="offer.eyebrow">Oferta</p>
+        <h2 class="section-title center reveal" data-i18n="offer.title">Trenuj tak, jak Ci najlepiej</h2>
+        <p class="section-lead center reveal" data-i18n="offer.lead">
+          Wybierz formę treningu dopasowaną do Twoich celów — sami lub z naszym wsparciem.
+        </p>
+
+        <div class="offer-grid">
+          <article class="offer-card reveal">
+            <div class="offer-icon" aria-hidden="true">🏋️</div>
+            <h3 data-i18n="offer.card1Title">Siłownia ogólna</h3>
+            <p data-i18n="offer.card1Text">Pełne wyposażenie do treningu siłowego i wytrzymałościowego, dostępne na karnet.</p>
+          </article>
+
+          <article class="offer-card reveal">
+            <div class="offer-icon" aria-hidden="true">🎯</div>
+            <h3 data-i18n="offer.card2Title">Trening personalny</h3>
+            <p data-i18n="offer.card2Text">Indywidualny plan i opieka trenera — szybsze i bezpieczniejsze efekty.</p>
+          </article>
+
+          <article class="offer-card reveal">
+            <div class="offer-icon" aria-hidden="true">🤝</div>
+            <h3 data-i18n="offer.card3Title">Zajęcia grupowe</h3>
+            <p data-i18n="offer.card3Text">Energia grupy i motywacja, która niesie przez cały trening.</p>
+          </article>
+
+          <article class="offer-card reveal">
+            <div class="offer-icon" aria-hidden="true">🧖</div>
+            <h3 data-i18n="offer.card4Title">Sauna i regeneracja</h3>
+            <p data-i18n="offer.card4Text">Strefa relaksu pomagająca ciału zregenerować się po wysiłku.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CENNIK
+         Pełna lista cen w formie tabeli — łatwa do edycji.
+         Aby zmienić cenę, edytuj treść w <span class="price-tag">
+         w odpowiednim wierszu .price-row.
+    ============================================================ -->
+    <section class="section pricing" id="pricing">
+      <div class="container">
+        <p class="eyebrow center reveal" data-i18n="pricing.eyebrow">Cennik</p>
+        <h2 class="section-title center reveal" data-i18n="pricing.title">Wybierz swój karnet</h2>
+        <p class="section-lead center reveal" data-i18n="pricing.lead">
+          Przejrzyste ceny, bez skrytych kosztów. Aktualna oferta cenowa Cool Gym.
+        </p>
+
+        <div class="price-table reveal">
+
+          <div class="price-row price-row--featured">
+            <div class="price-row-info">
+              <p class="price-badge" data-i18n="pricing.popular">Najpopularniejszy</p>
+              <h3 data-i18n="pricing.row1Title">Karnet OPEN</h3>
+              <p data-i18n="pricing.row1Desc">Karnet całodniowy bez ograniczeń, ważny 1 miesiąc od daty zakupu. Pełna opieka instruktorska, 10% rabatu na odżywki.</p>
+            </div>
+            <span class="price-tag">100 <small data-i18n="pricing.pln">zł</small></span>
+          </div>
+
+          <div class="price-row">
+            <div class="price-row-info">
+              <h3 data-i18n="pricing.row2Title">Karnet OPEN z białkiem po treningu</h3>
+              <p data-i18n="pricing.row2Desc">Karnet całodniowy bez ograniczeń na 1 miesiąc. Pełna opieka instruktorska, 10% rabatu na odżywki oraz odżywka białkowa po każdym treningu.</p>
+            </div>
+            <span class="price-tag">160 <small data-i18n="pricing.pln">zł</small></span>
+          </div>
+
+          <div class="price-row">
+            <div class="price-row-info">
+              <h3 data-i18n="pricing.row3Title">Karnet OPEN na okres 2 / 3 miesiące</h3>
+              <p data-i18n="pricing.row3Desc">Karnet całodniowy bez ograniczeń, ważny 2 lub 3 miesiące od daty zakupu. Pełna opieka instruktorska, 10% rabatu na odżywki.</p>
+            </div>
+            <span class="price-tag">190 <small data-i18n="pricing.pln">zł</small> / 285 <small data-i18n="pricing.pln">zł</small></span>
+          </div>
+
+          <div class="price-row">
+            <div class="price-row-info">
+              <h3 data-i18n="pricing.row4Title">Karnet OPEN na 10 wejść</h3>
+              <p data-i18n="pricing.row4Desc">Karnet całodniowy na 10 wejść, ważny 6 miesięcy od daty zakupu. Pełna opieka instruktorska, 10% rabatu na odżywki.</p>
+            </div>
+            <span class="price-tag">160 <small data-i18n="pricing.pln">zł</small></span>
+          </div>
+
+          <div class="price-row">
+            <div class="price-row-info">
+              <h3 data-i18n="pricing.row5Title">Karnet STUDENT OPEN</h3>
+              <p data-i18n="pricing.row5Desc">Karnet całodniowy bez ograniczeń, ważny 1 miesiąc od daty zakupu. Pełna opieka instruktorska, 10% rabatu na odżywki.</p>
+            </div>
+            <span class="price-tag">90 <small data-i18n="pricing.pln">zł</small></span>
+          </div>
+
+          <div class="price-row">
+            <div class="price-row-info">
+              <h3 data-i18n="pricing.row6Title">Karnet STUDENT z białkiem po treningu</h3>
+              <p data-i18n="pricing.row6Desc">Karnet całodniowy bez ograniczeń na 1 miesiąc. Pełna opieka instruktorska, 10% rabatu na odżywki oraz odżywka białkowa po każdym treningu.</p>
+            </div>
+            <span class="price-tag">155 <small data-i18n="pricing.pln">zł</small></span>
+          </div>
+
+          <div class="price-row">
+            <div class="price-row-info">
+              <h3 data-i18n="pricing.row7Title">Karnet STUDENT OPEN na okres 2 / 3 miesiące</h3>
+              <p data-i18n="pricing.row7Desc">Karnet całodniowy bez ograniczeń, ważny 2 lub 3 miesiące od daty zakupu. Pełna opieka instruktorska, 10% rabatu na odżywki.</p>
+            </div>
+            <span class="price-tag">170 <small data-i18n="pricing.pln">zł</small> / 255 <small data-i18n="pricing.pln">zł</small></span>
+          </div>
+
+          <div class="price-row">
+            <div class="price-row-info">
+              <h3 data-i18n="pricing.row8Title">Wejście jednorazowe</h3>
+              <p data-i18n="pricing.row8Desc">Wejście jednorazowe bez ograniczeń. W cenie opieka instruktorska.</p>
+            </div>
+            <span class="price-tag">20 <small data-i18n="pricing.pln">zł</small></span>
+          </div>
+
+          <div class="price-row">
+            <div class="price-row-info">
+              <h3 data-i18n="pricing.row9Title">Trening personalny — 1 godzina / powyżej 3 godzin</h3>
+              <p data-i18n="pricing.row9Desc">Trening z trenerem personalnym na obiekcie siłowni.</p>
+            </div>
+            <span class="price-tag">100 <small data-i18n="pricing.pln">zł</small> / 90 <small data-i18n="pricing.pln">zł</small></span>
+          </div>
+
+          <div class="price-row">
+            <div class="price-row-info">
+              <h3 data-i18n="pricing.row10Title">Trening personalny dla 2 / 3–4 osób</h3>
+              <p data-i18n="pricing.row10Desc">Trening z trenerem personalnym na obiekcie siłowni dla grupy 2 lub 3–4 osobowej.</p>
+            </div>
+            <span class="price-tag">75 <small data-i18n="pricing.pln">zł</small> / 65 <small data-i18n="pricing.pln">zł</small> <span class="price-unit" data-i18n="pricing.perPerson">za osobę</span></span>
+          </div>
+
+        </div>
+
+        <p class="pricing-note reveal">
+          <span data-i18n="pricing.validFrom">Cennik obowiązuje od</span> 01.01.2025
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         ZNIŻKI I PROMOCJE
+         Aby zmienić warunki promocji, edytuj treść w odpowiednim
+         .promo-card poniżej (wartości wyróżnione są w <span class="text-accent">).
+    ============================================================ -->
+    <section class="section promos" id="promos">
+      <div class="container">
+        <p class="eyebrow center reveal" data-i18n="promos.eyebrow">Promocje</p>
+        <h2 class="section-title center reveal" data-i18n="promos.title">Zniżki oraz promocje</h2>
+        <p class="section-lead center reveal" data-i18n="promos.lead">
+          Sprawdź, jak możesz trenować więcej, płacąc mniej.
+        </p>
+
+        <div class="promo-group reveal">
+          <h3 class="promo-group-title" data-i18n="promos.group1Title">Promocje przy zakupie karnetu</h3>
+          <div class="promo-grid">
+            <article class="promo-card">
+              <h4 data-i18n="promos.card1Title">Kup karnet na 1 albo 2 miesiące — otrzymaj gratis</h4>
+              <p data-i18n="promos.card1Text">Przy zakupie karnetu na 1 albo 2 miesiące otrzymujesz <span class="text-accent">plan treningowy GRATIS!</span></p>
+              <p data-i18n="promos.card1Note">Przy kontynuacji karnetu skonsultujemy Twój plan i wprowadzimy odpowiednie zmiany!</p>
+            </article>
+
+            <article class="promo-card">
+              <h4 data-i18n="promos.card2Title">Kup karnet 3-miesięczny — otrzymaj gratis</h4>
+              <p data-i18n="promos.card2Text">Przy zakupie karnetu na 3 miesiące otrzymujesz miesięczny plan treningowy z comiesięczną konsultacją oraz <span class="text-accent">trening personalny GRATIS!</span></p>
+            </article>
+          </div>
+        </div>
+
+        <div class="promo-group reveal">
+          <h3 class="promo-group-title" data-i18n="promos.group2Title">Promocje na treningi personalne</h3>
+          <div class="promo-grid">
+            <article class="promo-card">
+              <h4 data-i18n="promos.card3Title">Promocja na treningi personalne dla osób z karnetem</h4>
+              <p data-i18n="promos.card3Text">Masz karnet? Umów się na trening personalny już teraz, a zapłacisz przy 1-razowym treningu <span class="text-accent">80 zł</span>, przy więcej niż 3 treningach <span class="text-accent">70 zł</span>.</p>
+              <p data-i18n="promos.card3Note">Cena regularna treningu personalnego to <span class="text-accent">100 zł</span>.</p>
+            </article>
+
+            <article class="promo-card">
+              <h4 data-i18n="promos.card4Title">Trening personalny raz w tygodniu</h4>
+              <p data-i18n="promos.card4Text">Trenuj pod okiem trenera personalnego 1 raz w tygodniu (4 treningi w miesiącu), a za trening zapłacisz <span class="text-accent">65 zł</span>.</p>
+              <p data-i18n="promos.card4Note">Cena regularna treningu personalnego to <span class="text-accent">100 zł</span>.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="promo-group reveal">
+          <h3 class="promo-group-title" data-i18n="promos.group3Title">Zniżki na suplementy</h3>
+          <div class="promo-grid promo-grid--single">
+            <article class="promo-card">
+              <h4 data-i18n="promos.card5Title">Dla stałych bywalców — tańsze suplementy</h4>
+              <p data-i18n="promos.card5Text">Dla klubowiczów z aktualnym karnetem do <span class="text-accent">10%</span> zniżki na suplementy i odżywki.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="promo-group reveal">
+          <h3 class="promo-group-title" data-i18n="promos.group4Title">Trenuj z przyjacielem</h3>
+          <div class="promo-grid">
+            <article class="promo-card">
+              <h4 data-i18n="promos.card6Title">Zawołaj przyjaciół</h4>
+              <p data-i18n="promos.card6Text">Przyprowadź <span class="text-accent">dwóch nowych członków</span>, którzy zakupią karnet i ciesz się <span class="text-accent">miesięcznym karnetem za darmo!</span></p>
+              <p data-i18n="promos.card6Note">Przyprowadź <span class="text-accent">pięciu nowych członków</span>, którzy zakupią miesięczny karnet, a karnet <span class="text-accent">3-miesięczny</span> otrzymasz za darmo!</p>
+            </article>
+
+            <article class="promo-card">
+              <h4 data-i18n="promos.card7Title">Przyjaciel trenuje za złotówkę</h4>
+              <p data-i18n="promos.card7Text">Posiadasz aktualny karnet? Masz możliwość <span class="text-accent">zaproszenia jednej osoby</span> na jeden trening za <span class="text-accent">1 zł!</span></p>
+              <p data-i18n="promos.card7Note">Promocja dotyczy wyłącznie jednego zaproszenia na karnety miesięczne.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         GODZINY OTWARCIA
+    ============================================================ -->
+    <section class="section hours" id="hours">
+      <div class="container hours-grid">
+        <div class="reveal">
+          <p class="eyebrow" data-i18n="hours.eyebrow">Godziny otwarcia</p>
+          <h2 class="section-title" data-i18n="hours.title">Jesteśmy otwarci<br>dla Ciebie</h2>
+          <p class="section-lead" data-i18n="hours.lead">
+            Zaplanuj swój trening — sprawdź, kiedy działamy.
+          </p>
+        </div>
+
+        <div class="hours-table reveal">
+          <div class="hours-row">
+            <span data-i18n="hours.weekdays">Poniedziałek – Piątek</span>
+            <span class="hours-time">06:00 – 22:00</span>
+          </div>
+          <div class="hours-row">
+            <span data-i18n="hours.saturday">Sobota</span>
+            <span class="hours-time">08:00 – 20:00</span>
+          </div>
+          <div class="hours-row">
+            <span data-i18n="hours.sunday">Niedziela</span>
+            <span class="hours-time">09:00 – 18:00</span>
+          </div>
+          <div class="hours-row hours-row--note">
+            <span data-i18n="hours.holidaysLabel">Święta</span>
+            <span class="hours-time" data-i18n="hours.holidaysValue">Godziny mogą się różnić</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         KALKULATOR BMI
+    ============================================================ -->
+    <section class="section bmi" id="bmi">
+      <div class="container">
+        <p class="eyebrow center reveal" data-i18n="bmi.eyebrow">Kalkulator</p>
+        <h2 class="section-title center reveal" data-i18n="bmi.title">Sprawdź swoje BMI</h2>
+        <p class="section-lead center reveal" data-i18n="bmi.lead">
+          Szybki wskaźnik punktu wyjścia do rozmowy z trenerem o Twoich celach.
+        </p>
+
+        <form class="bmi-card reveal" id="bmiForm" novalidate>
+          <div class="bmi-field">
+            <label for="bmiHeight" data-i18n="bmi.heightLabel">Wzrost (cm)</label>
+            <input type="number" id="bmiHeight" inputmode="decimal" min="50" max="250" step="0.1" placeholder="175" required>
+          </div>
+
+          <div class="bmi-field">
+            <label for="bmiWeight" data-i18n="bmi.weightLabel">Masa ciała (kg)</label>
+            <input type="number" id="bmiWeight" inputmode="decimal" min="20" max="400" step="0.1" placeholder="70" required>
+          </div>
+
+          <button type="submit" class="btn btn-primary bmi-submit" data-i18n="bmi.submit">Oblicz BMI</button>
+
+          <div class="bmi-result" id="bmiResult" hidden aria-live="polite">
+            <p class="bmi-result-value" id="bmiValue">—</p>
+            <p class="bmi-result-category" id="bmiCategory">—</p>
+          </div>
+
+          <p class="bmi-error" id="bmiError" hidden data-i18n="bmi.error">
+            Podaj prawidłowe wartości wzrostu i masy ciała.
+          </p>
+        </form>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         KONTAKT
+    ============================================================ -->
+    <section class="section contact" id="contact">
+      <div class="container contact-grid">
+        <div class="reveal">
+          <p class="eyebrow" data-i18n="contact.eyebrow">Kontakt</p>
+          <h2 class="section-title" data-i18n="contact.title">Zacznij trenować już dziś</h2>
+          <p class="section-lead" data-i18n="contact.lead">
+            Odwiedź nas, zadzwoń lub napisz — odpowiemy najszybciej, jak możemy.
+          </p>
+
+          <ul class="contact-list">
+            <li>
+              <span class="contact-icon" aria-hidden="true">📍</span>
+              <div>
+                <strong data-i18n="contact.addressLabel">Adres</strong>
+                <p>Galeria Handlowa "Outlet Graffica"<br>Plac płk. Leopolda Lisa-Kuli 19<br>35-025 Rzeszów</p>
+              </div>
+            </li>
+            <li>
+              <span class="contact-icon" aria-hidden="true">📞</span>
+              <div>
+                <strong data-i18n="contact.phoneLabel">Telefon</strong>
+                <p><a href="tel:+48123456789">+48 123 456 789</a></p>
+              </div>
+            </li>
+            <li>
+              <span class="contact-icon" aria-hidden="true">✉️</span>
+              <div>
+                <strong data-i18n="contact.emailLabel">E-mail</strong>
+                <p><a href="mailto:kontakt@coolgym.pl">kontakt@coolgym.pl</a></p>
+              </div>
+            </li>
+          </ul>
+
+          <a href="tel:+48123456789" class="btn btn-primary contact-call" data-i18n="contact.callCta">Zadzwoń teraz</a>
+        </div>
+
+        <div class="contact-map reveal">
+          <!-- Mapa Google — podmień parametr q= na właściwy adres siłowni -->
+          <iframe
+            src="https://www.google.com/maps?q=Plac+p%C5%82k.+Leopolda+Lisa-Kuli+19%2C+35-025+Rzesz%C3%B3w&output=embed"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Lokalizacja Cool Gym na mapie Google — Outlet Graffica, Rzeszów"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       STOPKA
+  ============================================================ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-logo">COOL<span class="logo-accent">GYM</span></p>
+      <p class="footer-copy">
+        © <span id="footerYear"></span>
+        <a href="https://www.instagram.com/daniel_web_pf/" target="_blank" rel="noopener noreferrer">Daniel Prajsnar</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
